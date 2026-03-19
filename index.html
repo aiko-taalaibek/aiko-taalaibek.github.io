@@ -119,8 +119,9 @@ nav.scrolled { border-bottom-color: var(--color-border); }
 .about-grid { display: grid; grid-template-columns: 280px 1fr; gap: 4rem; align-items: start; }
 .about-photo-wrap { position: relative; }
 .about-photo {
-  width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 4px;
-  filter: grayscale(15%); transition: filter 0.5s; position: relative; z-index: 1;
+  width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: 60% top;
+  border-radius: 4px; filter: grayscale(15%); transition: filter 0.5s;
+  position: relative; z-index: 1;
 }
 .about-photo:hover { filter: grayscale(0%); }
 .about-photo-wrap::after {
