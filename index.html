@@ -29,7 +29,7 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-body); background: var(--color-bg); color: var(--color-text);
-  font-size: 16px; line-height: 1.65; font-weight: 300; -webkit-font-smoothing: antialiased;
+  font-size: 18px; line-height: 1.7; font-weight: 300; -webkit-font-smoothing: antialiased;
 }
 
 ::selection { background: var(--color-accent-mid); }
@@ -288,6 +288,7 @@ footer {
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
 @media (max-width: 768px) {
+  body { font-size: 17px; line-height: 1.7; }
   nav { padding: 1rem 1.5rem; }
   .nav-links { display: none; }
   .hero { padding: 7rem 1.5rem 3rem; }
@@ -296,10 +297,14 @@ footer {
   .about-photo { max-width: 220px; }
   .about-photo-wrap { max-width: 220px; }
   .project-item { grid-template-columns: 1fr auto; gap: 1rem; }
+  .project-name { font-size: 1.1rem; }
+  .project-sub { font-size: 0.82rem; }
   .project-role { display: none; }
   .contact-section { padding: 4rem 1.5rem 3.5rem; }
+  .contact-section h2 { font-size: 2rem; }
+  .client-item { font-size: 0.95rem; }
   .clients-grid { grid-template-columns: 1fr 1fr; }
-  .project-detail-inner { padding: 1.25rem 1rem; }
+  .project-detail-inner { padding: 1.25rem 1rem; font-size: 0.95rem; }
   .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
   .stats-band { padding: 2rem 1.5rem; }
   .stat-number { font-size: 1.8rem; }
