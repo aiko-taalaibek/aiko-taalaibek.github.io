@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aiko Taalaibek - Creative Writing & Media Research</title>
-<meta name="description" content="Portfolio of Aiko Taalaibek - Creative Producer, Researcher, Scriptwriter and Director.">
+<title>Aiko Taalaibek — Project Management & Delivery Operations</title>
+<meta name="description" content="Aiko Taalaibek — Senior Project Manager and Delivery Operations specialist. 10 years leading multi-stakeholder digital projects for OSCE, GIZ, USAID, EU and other Tier-1 international organizations.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
@@ -14,13 +14,15 @@
 :root {
   --color-bg: #fafaf9;
   --color-text: #1a1a1a;
-  --color-text-secondary: #6b6b6b;
+  --color-text-secondary: #5e5e5e;
   --color-border: #e8e6e3;
   --color-tag-bg: #f0eeeb;
   --color-accent: #2c5282;
   --color-accent-light: #ebf1fa;
   --color-accent-mid: #d4e2f4;
   --color-accent-subtle: #f4f7fc;
+  --color-success: #2f7a4f;
+  --color-success-light: #e8f4ed;
   --font-display: 'DM Serif Display', Georgia, serif;
   --font-body: 'DM Sans', -apple-system, sans-serif;
 }
@@ -29,7 +31,7 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-body); background: var(--color-bg); color: var(--color-text);
-  font-size: 18px; line-height: 1.7; font-weight: 300; -webkit-font-smoothing: antialiased;
+  font-size: 19px; line-height: 1.75; font-weight: 400; -webkit-font-smoothing: antialiased;
 }
 
 ::selection { background: var(--color-accent-mid); }
@@ -40,83 +42,114 @@ body {
 /* ─── NAV ─── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  padding: 1.25rem 2.5rem;
+  padding: 1.4rem 2.5rem;
   display: flex; justify-content: space-between; align-items: center;
-  background: rgba(250,250,249,0.88);
+  background: rgba(250,250,249,0.92);
   backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid transparent; transition: border-color 0.3s;
 }
 nav.scrolled { border-bottom-color: var(--color-border); }
 
 .nav-name {
-  font-family: var(--font-display); font-size: 1.1rem;
+  font-family: var(--font-display); font-size: 1.2rem;
   color: var(--color-text); text-decoration: none; letter-spacing: -0.01em;
 }
 
 .nav-right { display: flex; align-items: center; gap: 2rem; }
-.nav-links { display: flex; gap: 1.75rem; list-style: none; }
+.nav-links { display: flex; gap: 1.85rem; list-style: none; }
 .nav-links a {
-  font-size: 0.8rem; color: var(--color-text-secondary); text-decoration: none;
-  letter-spacing: 0.04em; text-transform: uppercase; font-weight: 400; transition: color 0.2s;
+  font-size: 0.88rem; color: var(--color-text-secondary); text-decoration: none;
+  letter-spacing: 0.04em; text-transform: uppercase; font-weight: 500; transition: color 0.2s;
 }
 .nav-links a:hover { color: var(--color-accent); }
 
 .lang-toggle {
-  font-size: 0.78rem; font-weight: 500; letter-spacing: 0.05em; cursor: pointer;
+  font-size: 0.85rem; font-weight: 500; letter-spacing: 0.05em; cursor: pointer;
   border: 1px solid var(--color-accent); background: transparent;
-  padding: 0.28rem 0.6rem; border-radius: 3px; color: var(--color-accent);
+  padding: 0.32rem 0.7rem; border-radius: 3px; color: var(--color-accent);
   transition: all 0.2s; font-family: var(--font-body);
 }
 .lang-toggle:hover { background: var(--color-accent); color: #fff; }
 
+/* ─── AVAILABILITY BADGE ─── */
+.availability {
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  background: var(--color-success-light); color: var(--color-success);
+  padding: 0.4rem 0.9rem; border-radius: 100px;
+  font-size: 0.82rem; font-weight: 500; letter-spacing: 0.02em;
+  margin-bottom: 1.4rem;
+  opacity: 0; animation: fadeUp 0.8s ease forwards 0.1s;
+}
+.availability::before {
+  content: ''; width: 8px; height: 8px; border-radius: 50%;
+  background: var(--color-success);
+  box-shadow: 0 0 0 0 rgba(47,122,79,0.5);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(47,122,79,0.5); }
+  70% { box-shadow: 0 0 0 8px rgba(47,122,79,0); }
+  100% { box-shadow: 0 0 0 0 rgba(47,122,79,0); }
+}
+
 /* ─── HERO ─── */
 .hero {
   min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
-  padding: 8rem 2.5rem 4rem; max-width: 860px; margin: 0 auto;
+  padding: 8.5rem 2.5rem 4rem; max-width: 920px; margin: 0 auto;
 }
 
 .hero-label {
-  font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--color-accent); margin-bottom: 1.5rem; font-weight: 500;
+  font-size: 0.88rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--color-accent); margin-bottom: 1.5rem; font-weight: 600;
   opacity: 0; animation: fadeUp 0.8s ease forwards 0.2s;
 }
 
 .hero h1 {
-  font-family: var(--font-display); font-size: clamp(2.8rem, 6vw, 4.2rem);
-  font-weight: 400; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1.75rem;
+  font-family: var(--font-display); font-size: clamp(3rem, 6.5vw, 4.8rem);
+  font-weight: 400; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.75rem;
   opacity: 0; animation: fadeUp 0.8s ease forwards 0.4s;
 }
 
 .hero-desc {
-  font-size: 1.08rem; color: var(--color-text-secondary); max-width: 540px; line-height: 1.75;
+  font-size: 1.2rem; color: var(--color-text-secondary); max-width: 620px; line-height: 1.75;
   opacity: 0; animation: fadeUp 0.8s ease forwards 0.6s;
 }
 
+.hero-desc strong { color: var(--color-text); font-weight: 500; }
+
 .hero-cta {
-  margin-top: 2.5rem; opacity: 0; animation: fadeUp 0.8s ease forwards 0.8s;
+  margin-top: 2.75rem; display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap;
+  opacity: 0; animation: fadeUp 0.8s ease forwards 0.8s;
 }
 .hero-cta a {
-  font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--color-accent); text-decoration: none; font-weight: 500;
-  display: inline-flex; align-items: center; gap: 0.5rem; transition: gap 0.3s;
+  font-size: 0.92rem; letter-spacing: 0.08em; text-transform: uppercase;
+  text-decoration: none; font-weight: 600;
+  display: inline-flex; align-items: center; gap: 0.5rem; transition: gap 0.3s, background 0.2s;
 }
-.hero-cta a:hover { gap: 0.85rem; }
-.hero-cta a::after { content: '\2192'; font-size: 1rem; }
+.hero-cta a.primary {
+  background: var(--color-accent); color: #fff;
+  padding: 0.95rem 1.5rem; border-radius: 3px;
+}
+.hero-cta a.primary:hover { background: #1e3a5f; gap: 0.85rem; }
+.hero-cta a.primary::after { content: '\2192'; font-size: 1.05rem; }
+.hero-cta a.secondary { color: var(--color-accent); }
+.hero-cta a.secondary:hover { gap: 0.85rem; }
+.hero-cta a.secondary::after { content: '\2192'; font-size: 1.05rem; }
 
 /* ─── SECTIONS ─── */
-.section { padding: 5rem 2.5rem; max-width: 1080px; margin: 0 auto; }
+.section { padding: 5.5rem 2.5rem; max-width: 1080px; margin: 0 auto; }
 
 .section-header {
-  display: flex; align-items: baseline; gap: 1rem;
-  margin-bottom: 3.5rem; border-top: 1px solid var(--color-border); padding-top: 2rem;
+  display: flex; align-items: baseline; gap: 1.1rem;
+  margin-bottom: 3.75rem; border-top: 1px solid var(--color-border); padding-top: 2.2rem;
 }
 .section-number {
-  font-size: 0.72rem; color: var(--color-accent); letter-spacing: 0.06em; font-weight: 500;
+  font-size: 0.82rem; color: var(--color-accent); letter-spacing: 0.08em; font-weight: 600;
 }
-.section-title { font-family: var(--font-display); font-size: 1.6rem; font-weight: 400; }
+.section-title { font-family: var(--font-display); font-size: 1.9rem; font-weight: 400; }
 
 /* ─── ABOUT ─── */
-.about-grid { display: grid; grid-template-columns: 280px 1fr; gap: 4rem; align-items: start; }
+.about-grid { display: grid; grid-template-columns: 300px 1fr; gap: 4.5rem; align-items: start; }
 .about-photo-wrap { position: relative; }
 .about-photo {
   width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: 60% top;
@@ -128,14 +161,14 @@ nav.scrolled { border-bottom-color: var(--color-border); }
   content: ''; position: absolute; top: 10px; left: 10px; right: -10px; bottom: -10px;
   border: 2px solid var(--color-accent-mid); border-radius: 4px; z-index: 0;
 }
-.about-text p { margin-bottom: 1.25rem; color: var(--color-text-secondary); font-size: 1rem; line-height: 1.8; }
-.about-text p:first-child { color: var(--color-text); font-size: 1.05rem; }
+.about-text p { margin-bottom: 1.4rem; color: var(--color-text-secondary); font-size: 1.1rem; line-height: 1.8; }
+.about-text p:first-child { color: var(--color-text); font-size: 1.18rem; line-height: 1.7; }
 .about-text strong { font-weight: 500; color: var(--color-text); }
-.skills-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem; }
+.skills-row { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-top: 2.25rem; }
 .skill-tag {
-  font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase;
-  padding: 0.4rem 0.85rem; background: var(--color-tag-bg); border-radius: 2px;
-  color: var(--color-text-secondary); font-weight: 400;
+  font-size: 0.88rem; letter-spacing: 0.04em; text-transform: uppercase;
+  padding: 0.5rem 1rem; background: var(--color-tag-bg); border-radius: 2px;
+  color: var(--color-text-secondary); font-weight: 500;
 }
 .skill-tag.accent { background: var(--color-accent-light); color: var(--color-accent); }
 
@@ -143,22 +176,22 @@ nav.scrolled { border-bottom-color: var(--color-border); }
 .project-list { display: flex; flex-direction: column; }
 .project-item {
   display: grid; grid-template-columns: 1fr auto auto; align-items: center;
-  padding: 1.35rem 0; border-bottom: 1px solid var(--color-border);
+  padding: 1.5rem 0; border-bottom: 1px solid var(--color-border);
   text-decoration: none; color: inherit; gap: 2rem; cursor: pointer; user-select: none;
 }
 .project-item:first-child { border-top: 1px solid var(--color-border); }
 .project-item:hover .project-name { color: var(--color-accent); }
-.project-name-wrap { display: flex; flex-direction: column; gap: 0.2rem; }
+.project-name-wrap { display: flex; flex-direction: column; gap: 0.3rem; }
 .project-name {
-  font-family: var(--font-display); font-size: 1.2rem; font-weight: 400;
-  transition: color 0.2s; line-height: 1.4;
+  font-family: var(--font-display); font-size: 1.32rem; font-weight: 400;
+  transition: color 0.2s; line-height: 1.35;
 }
 .project-sub {
-  font-size: 0.88rem; color: var(--color-text-secondary); font-style: italic; font-weight: 300;
+  font-size: 1rem; color: var(--color-text-secondary); font-style: italic; font-weight: 300;
 }
-.project-role { font-size: 0.9rem; color: var(--color-text-secondary); text-align: right; white-space: nowrap; }
+.project-role { font-size: 0.95rem; color: var(--color-text-secondary); text-align: right; white-space: nowrap; font-weight: 500; }
 .project-arrow {
-  font-size: 0.9rem; color: var(--color-text-secondary); transition: transform 0.3s; display: inline-block;
+  font-size: 1rem; color: var(--color-text-secondary); transition: transform 0.3s; display: inline-block;
 }
 .project-item.active .project-arrow { transform: rotate(45deg); color: var(--color-accent); }
 
@@ -167,55 +200,55 @@ nav.scrolled { border-bottom-color: var(--color-border); }
   max-height: 0; overflow: hidden;
   transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.project-detail.open { max-height: 700px; }
+.project-detail.open { max-height: 800px; }
 .project-detail-inner {
-  padding: 1.75rem 1.5rem; font-size: 1.02rem; color: var(--color-text-secondary);
-  line-height: 1.8; max-width: 720px;
+  padding: 1.85rem 1.65rem; font-size: 1.08rem; color: var(--color-text-secondary);
+  line-height: 1.8; max-width: 760px;
   border-left: 3px solid var(--color-accent-mid); margin-left: 0.5rem;
   background: var(--color-accent-subtle);
 }
-.project-detail-inner p { margin-bottom: 0.75rem; }
+.project-detail-inner p { margin-bottom: 0.85rem; }
 .project-detail-inner strong { font-weight: 500; color: var(--color-text); }
 .project-detail-inner em { font-style: italic; color: var(--color-text-secondary); }
-.detail-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem; }
+.detail-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 1.1rem; }
 .detail-tag {
-  font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase;
-  padding: 0.3rem 0.7rem; border-radius: 2px;
+  font-size: 0.85rem; letter-spacing: 0.04em; text-transform: uppercase;
+  padding: 0.35rem 0.8rem; border-radius: 2px; font-weight: 500;
   background: var(--color-accent-light); color: var(--color-accent);
 }
 .detail-tag.neutral { background: var(--color-tag-bg); color: var(--color-text-secondary); }
 .project-detail-inner a {
-  color: var(--color-accent); text-decoration: underline; text-underline-offset: 3px; font-weight: 400;
+  color: var(--color-accent); text-decoration: underline; text-underline-offset: 3px; font-weight: 500;
 }
 .project-detail-inner a:hover { color: var(--color-text); }
 .detail-highlight {
-  font-size: 0.88rem; font-weight: 500; color: var(--color-accent);
-  text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 0.5rem;
+  font-size: 0.92rem; font-weight: 600; color: var(--color-accent);
+  text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.6rem;
 }
 
 /* ─── CLIENTS ─── */
-.clients-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.75rem; }
+.clients-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 0.8rem; }
 .client-item {
-  padding: 1.1rem 1.35rem; border: 1px solid var(--color-accent-mid); border-radius: 3px;
-  font-size: 1rem; color: var(--color-text-secondary); transition: all 0.2s;
-  background: #fff;
+  padding: 1.2rem 1.4rem; border: 1px solid var(--color-accent-mid); border-radius: 3px;
+  font-size: 1.08rem; color: var(--color-text-secondary); transition: all 0.2s;
+  background: #fff; font-weight: 500;
 }
 .client-item:hover { border-color: var(--color-accent); color: var(--color-accent); }
 
 /* ─── CONTACT ─── */
 .contact-section {
-  padding: 6rem 2.5rem 5rem; max-width: 860px; margin: 0 auto; text-align: center;
+  padding: 6.5rem 2.5rem 5.5rem; max-width: 920px; margin: 0 auto; text-align: center;
 }
 .contact-section h2 {
-  font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.8rem);
-  font-weight: 400; margin-bottom: 1rem; letter-spacing: -0.02em;
+  font-family: var(--font-display); font-size: clamp(2.4rem, 4.5vw, 3.4rem);
+  font-weight: 400; margin-bottom: 1.1rem; letter-spacing: -0.02em;
 }
-.contact-section p { color: var(--color-text-secondary); font-size: 1.1rem; margin-bottom: 2.5rem; }
-.contact-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+.contact-section p { color: var(--color-text-secondary); font-size: 1.2rem; margin-bottom: 2.75rem; max-width: 640px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+.contact-links { display: flex; justify-content: center; gap: 2.25rem; flex-wrap: wrap; }
 .contact-link {
-  font-size: 0.92rem; letter-spacing: 0.06em; text-transform: uppercase;
-  color: var(--color-accent); text-decoration: none; font-weight: 500;
-  padding-bottom: 2px; border-bottom: 1px solid var(--color-accent-mid); transition: border-color 0.2s;
+  font-size: 1rem; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--color-accent); text-decoration: none; font-weight: 600;
+  padding-bottom: 3px; border-bottom: 1px solid var(--color-accent-mid); transition: border-color 0.2s;
 }
 .contact-link:hover { border-color: var(--color-accent); }
 
@@ -224,60 +257,60 @@ nav.scrolled { border-bottom-color: var(--color-border); }
 
 /* ─── STATS BAND ─── */
 .stats-band {
-  background: var(--color-accent); color: #fff; padding: 3rem 2.5rem;
+  background: var(--color-accent); color: #fff; padding: 3.5rem 2.5rem;
 }
 .stats-inner {
   max-width: 1080px; margin: 0 auto;
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center;
 }
 .stat-number {
-  font-family: var(--font-display); font-size: 2.2rem; font-weight: 400;
-  line-height: 1; margin-bottom: 0.4rem;
+  font-family: var(--font-display); font-size: 2.7rem; font-weight: 400;
+  line-height: 1; margin-bottom: 0.55rem;
 }
 .stat-label {
-  font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;
-  opacity: 0.7; font-weight: 400;
+  font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase;
+  opacity: 0.78; font-weight: 500; line-height: 1.5;
 }
 
 /* ─── MID CALLOUT BAND ─── */
 .callout-band {
-  background: var(--color-accent-light); padding: 3.5rem 2.5rem; margin: 3rem 0;
+  background: var(--color-accent-light); padding: 4rem 2.5rem; margin: 3.5rem 0;
   border-radius: 6px;
 }
 .callout-inner {
-  max-width: 720px; margin: 0 auto; text-align: center;
+  max-width: 760px; margin: 0 auto; text-align: center;
 }
 .callout-inner blockquote {
-  font-family: var(--font-display); font-size: 1.35rem; font-weight: 400;
-  line-height: 1.5; color: var(--color-accent); font-style: italic;
-  margin-bottom: 1rem;
+  font-family: var(--font-display); font-size: 1.55rem; font-weight: 400;
+  line-height: 1.45; color: var(--color-accent); font-style: italic;
+  margin-bottom: 1.1rem;
 }
 .callout-inner .callout-caption {
-  font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase;
-  color: var(--color-text-secondary); font-weight: 400;
+  font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--color-text-secondary); font-weight: 500;
 }
 
 /* ─── CLIENTS BLUE BG ─── */
 .clients-band {
-  background: var(--color-accent-subtle); padding: 5rem 0;
+  background: var(--color-accent-subtle); padding: 5.5rem 0;
 }
 .clients-band .section { padding-top: 0; padding-bottom: 0; }
 
 /* ─── CONTACT BLUE BLOCK ─── */
 .contact-band {
-  background: var(--color-accent); padding: 5rem 0;
+  background: var(--color-accent); padding: 5.5rem 0;
 }
 .contact-band .contact-section { padding-top: 0; padding-bottom: 0; }
 .contact-band h2 { color: #fff; }
-.contact-band p { color: rgba(255,255,255,0.7); }
+.contact-band p { color: rgba(255,255,255,0.78); }
 .contact-band .contact-link {
-  color: #fff; border-bottom-color: rgba(255,255,255,0.3);
+  color: #fff; border-bottom-color: rgba(255,255,255,0.4);
 }
 .contact-band .contact-link:hover { border-bottom-color: #fff; }
 
 footer {
-  padding: 2rem 2.5rem;
-  text-align: center; font-size: 0.75rem; color: var(--color-text-secondary);
+  padding: 2.25rem 2.5rem;
+  text-align: center; font-size: 0.82rem; color: var(--color-text-secondary);
 }
 
 @keyframes fadeUp {
@@ -288,36 +321,45 @@ footer {
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
 @media (max-width: 768px) {
-  body { font-size: 17px; line-height: 1.7; }
-  nav { padding: 1rem 1.5rem; }
+  body { font-size: 17.5px; line-height: 1.7; }
+  nav { padding: 1rem 1.4rem; }
   .nav-links { display: none; }
   .hero { padding: 7rem 1.5rem 3rem; }
-  .section { padding: 3.5rem 1.5rem; }
+  .section { padding: 3.75rem 1.5rem; }
   .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-  .about-photo { max-width: 220px; }
-  .about-photo-wrap { max-width: 220px; }
-  .project-item { grid-template-columns: 1fr auto; gap: 1rem; padding: 1.2rem 0; }
-  .project-name { font-size: 1.08rem; }
-  .project-sub { font-size: 0.82rem; }
+  .about-photo { max-width: 230px; }
+  .about-photo-wrap { max-width: 230px; }
+  .about-text p { font-size: 1.02rem; }
+  .about-text p:first-child { font-size: 1.08rem; }
+  .project-item { grid-template-columns: 1fr auto; gap: 1rem; padding: 1.3rem 0; }
+  .project-name { font-size: 1.12rem; }
+  .project-sub { font-size: 0.92rem; }
   .project-role { display: none; }
-  .project-detail-inner { padding: 1.25rem 1rem; font-size: 0.95rem; }
-  .detail-tag { font-size: 0.72rem; }
-  .skill-tag { font-size: 0.74rem; }
+  .project-detail-inner { padding: 1.3rem 1.05rem; font-size: 0.98rem; }
+  .detail-tag { font-size: 0.76rem; }
+  .skill-tag { font-size: 0.78rem; }
   .contact-section { padding: 4rem 1.5rem 3.5rem; }
-  .contact-section h2 { font-size: 2rem; }
-  .contact-section p { font-size: 1rem; }
-  .contact-link { font-size: 0.85rem; }
-  .client-item { font-size: 0.92rem; padding: 0.9rem 1.1rem; }
+  .contact-section h2 { font-size: 2.1rem; }
+  .contact-section p { font-size: 1.05rem; }
+  .contact-link { font-size: 0.92rem; }
+  .client-item { font-size: 0.98rem; padding: 1rem 1.15rem; }
   .clients-grid { grid-template-columns: 1fr 1fr; }
-  .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-  .stats-band { padding: 2rem 1.5rem; }
-  .stat-number { font-size: 1.8rem; }
-  .clients-band { padding: 3.5rem 0; }
-  .contact-band { padding: 3.5rem 0; }
+  .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 1.75rem; }
+  .stats-band { padding: 2.25rem 1.5rem; }
+  .stat-number { font-size: 2.1rem; }
+  .stat-label { font-size: 0.74rem; }
+  .clients-band { padding: 3.75rem 0; }
+  .contact-band { padding: 3.75rem 0; }
+  .callout-band { padding: 2.5rem 1.5rem; margin: 2rem 0; }
+  .callout-inner blockquote { font-size: 1.2rem; }
+  .hero-cta { gap: 1rem; }
+  .hero-cta a.primary { padding: 0.85rem 1.3rem; font-size: 0.85rem; }
+  .hero-cta a.secondary { font-size: 0.85rem; }
 }
 @media (max-width: 480px) {
-  .hero h1 { font-size: 2.2rem; }
+  .hero h1 { font-size: 2.4rem; }
   .clients-grid { grid-template-columns: 1fr; }
+  .hero-desc { font-size: 1.05rem; }
 }
 </style>
 </head>
@@ -330,7 +372,7 @@ footer {
   <div class="nav-right">
     <ul class="nav-links">
       <li><a href="#about"><span class="en">About</span><span class="ru">Обо мне</span></a></li>
-      <li><a href="#portfolio"><span class="en">Portfolio</span><span class="ru">Портфолио</span></a></li>
+      <li><a href="#portfolio"><span class="en">Case Studies</span><span class="ru">Кейсы</span></a></li>
       <li><a href="#clients"><span class="en">Clients</span><span class="ru">Клиенты</span></a></li>
       <li><a href="#contact"><span class="en">Contact</span><span class="ru">Контакты</span></a></li>
     </ul>
@@ -341,19 +383,27 @@ footer {
 </nav>
 
 <section class="hero">
+  <div class="availability">
+    <span class="en">Available for new opportunities</span>
+    <span class="ru">Открыта к новым возможностям</span>
+  </div>
   <div class="hero-label">
-    <span class="en">Creative Writing & Media Research</span>
-    <span class="ru">Сценарное мастерство и медиаисследования</span>
+    <span class="en">Project Management &amp; Delivery Operations</span>
+    <span class="ru">Управление проектами и операционная поставка</span>
   </div>
   <h1>Aiko Taalaibek</h1>
   <p class="hero-desc">
-    <span class="en">Creative producer, researcher, scriptwriter and director. Transforming complex data and cultural narratives into compelling visual stories for international organizations and national projects.</span>
-    <span class="ru">Креативный продюсер, исследователь, сценарист и режиссер. Трансформирую сложные данные и культурные нарративы в убедительные визуальные истории для международных организаций и национальных проектов.</span>
+    <span class="en"><strong>Senior project manager</strong> with 10 years leading complex, multi-stakeholder digital projects from discovery to go-live for international organizations and enterprise clients. I translate ambiguous requirements into <strong>structured execution plans</strong> and ensure <strong>zero-defect handovers</strong> under tight SLAs.</span>
+    <span class="ru"><strong>Старший проектный менеджер</strong> с 10-летним опытом руководства сложными мультистейкхолдерными цифровыми проектами — от формулирования требований до запуска. Перевожу размытые задачи в <strong>структурированные планы исполнения</strong> и обеспечиваю <strong>поставку без дефектов</strong> под жёсткие SLA.</span>
   </p>
   <div class="hero-cta">
-    <a href="#portfolio">
-      <span class="en">View selected work</span>
-      <span class="ru">Избранные проекты</span>
+    <a href="#portfolio" class="primary">
+      <span class="en">View case studies</span>
+      <span class="ru">Изучить кейсы</span>
+    </a>
+    <a href="#contact" class="secondary">
+      <span class="en">Get in touch</span>
+      <span class="ru">Связаться</span>
     </a>
   </div>
 </section>
@@ -362,15 +412,15 @@ footer {
   <div class="stats-inner">
     <div>
       <div class="stat-number">40+</div>
-      <div class="stat-label"><span class="en">Projects delivered</span><span class="ru">Реализованных проектов</span></div>
+      <div class="stat-label"><span class="en">Programs delivered</span><span class="ru">Реализованных программ</span></div>
     </div>
     <div>
       <div class="stat-number">300+</div>
-      <div class="stat-label"><span class="en">Videos produced</span><span class="ru">Произведенных видео</span></div>
+      <div class="stat-label"><span class="en">Deliverables shipped</span><span class="ru">Поставленных продуктов</span></div>
     </div>
     <div>
       <div class="stat-number">12+</div>
-      <div class="stat-label"><span class="en">International clients</span><span class="ru">Международных клиентов</span></div>
+      <div class="stat-label"><span class="en">Tier-1 clients</span><span class="ru">Tier-1 клиентов</span></div>
     </div>
     <div>
       <div class="stat-number">10+</div>
@@ -390,26 +440,32 @@ footer {
     </div>
     <div class="about-text">
       <p>
-        <span class="en">I'm a creative producer, researcher and scriptwriter from Kyrgyzstan with experience spanning <strong>documentary filmmaking, animation, edutainment</strong> and commercial video production.</span>
-        <span class="ru">Я креативный продюсер, исследователь и сценарист из Кыргызстана с опытом в <strong>документальном кино, анимации, edutainment</strong> и коммерческом видеопроизводстве.</span>
+        <span class="en">I'm a <strong>senior project manager and delivery specialist</strong> with 10 years of experience leading complex, multi-stakeholder digital projects from discovery to go-live for international organizations and enterprise clients.</span>
+        <span class="ru">Я <strong>старший проектный менеджер и специалист по поставке</strong> с 10-летним опытом руководства сложными мультистейкхолдерными цифровыми проектами — от формулирования требований до запуска — для международных организаций и корпоративных клиентов.</span>
       </p>
       <p>
-        <span class="en">My work sits at the intersection of <strong>deep research and storytelling</strong> - I transform complex expert content, archival data and social research into accessible, engaging visual formats. From a national educational series watched by thousands of students to EU-funded animation projects, I bring analytical rigor and narrative craft to every production.</span>
-        <span class="ru">Моя работа находится на стыке <strong>глубокого исследования и сторителлинга</strong> - я трансформирую сложный экспертный контент, архивные данные и социальные исследования в доступные, вовлекающие визуальные форматы.</span>
+        <span class="en">I specialize in managing the <strong>full project lifecycle</strong> of complex digital products — from requirements gathering and scoping through QA, integration, and final delivery. My core strength is acting as the <strong>bridge between diverse stakeholders, technical teams, and end clients</strong> — translating ambiguous requirements into structured execution plans and ensuring zero-defect handovers under tight SLAs.</span>
+        <span class="ru">Специализируюсь на управлении <strong>полным жизненным циклом</strong> сложных цифровых продуктов — от сбора требований и скоупинга до QA, интеграции и финальной поставки. Моя сильная сторона — выступать <strong>мостом между разнообразными стейкхолдерами, техническими командами и клиентами</strong>, переводя размытые требования в структурированные планы исполнения.</span>
       </p>
       <p>
-        <span class="en">I've partnered with <strong>OSCE, GIZ, USAID, American Councils, International Alert, IWPR, the European Union</strong> and other international organizations - often earning <em>repeat contracts</em> through quality delivery.</span>
-        <span class="ru">Я сотрудничала с <strong>ОБСЕ, GIZ, USAID, American Councils, International Alert, IWPR, Европейским Союзом</strong> и другими международными организациями - часто получая <em>повторные контракты</em> благодаря качеству реализации.</span>
+        <span class="en">My background combines analytical research with operational rigor: I'm equally comfortable structuring data-heavy projects, managing cross-functional teams, and authoring technical documentation and SOPs. This <strong>research-driven approach to project management</strong> consistently helps me anticipate risks, defend timelines with data, and maintain stakeholder alignment in high-pressure delivery environments.</span>
+        <span class="ru">Мой бэкграунд сочетает аналитический ресерч с операционной строгостью: одинаково уверенно структурирую data-heavy проекты, управляю кросс-функциональными командами и пишу техническую документацию и SOP. <strong>Research-driven подход к проектному менеджменту</strong> помогает мне предвидеть риски, защищать таймлайны данными и удерживать стейкхолдеров в одной плоскости.</span>
+      </p>
+      <p>
+        <span class="en">I've delivered projects for <strong>OSCE, GIZ, USAID, American Councils, International Alert, IWPR, the European Union</strong> and other Tier-1 international organizations — frequently <em>earning repeat engagements</em> through reliable execution and clear communication.</span>
+        <span class="ru">Реализовала проекты для <strong>ОБСЕ, GIZ, USAID, American Councils, International Alert, IWPR, Европейского Союза</strong> и других организаций уровня Tier-1 — часто <em>получая повторные контракты</em> благодаря надёжной поставке и чёткой коммуникации.</span>
       </p>
       <div class="skills-row">
-        <span class="skill-tag accent">Deep Research</span>
-        <span class="skill-tag accent">Cultural Research</span>
-        <span class="skill-tag">Scriptwriting</span>
-        <span class="skill-tag">Storytelling</span>
-        <span class="skill-tag accent">Data Adaptation</span>
-        <span class="skill-tag accent">Methodology</span>
-        <span class="skill-tag">Creative Direction</span>
-        <span class="skill-tag">Project Management</span>
+        <span class="skill-tag accent">Stakeholder Management</span>
+        <span class="skill-tag accent">Delivery Operations</span>
+        <span class="skill-tag">Project Lifecycle</span>
+        <span class="skill-tag">QA &amp; Integration</span>
+        <span class="skill-tag accent">SLA &amp; Risk Management</span>
+        <span class="skill-tag">Cross-functional Teams</span>
+        <span class="skill-tag accent">Requirements Gathering</span>
+        <span class="skill-tag">Technical Documentation</span>
+        <span class="skill-tag">SOPs &amp; Process Design</span>
+        <span class="skill-tag accent">Research-driven PM</span>
       </div>
     </div>
   </div>
@@ -418,232 +474,232 @@ footer {
 <section class="section" id="portfolio">
   <div class="section-header reveal">
     <span class="section-number">02</span>
-    <h2 class="section-title"><span class="en">Selected Work</span><span class="ru">Избранные проекты</span></h2>
+    <h2 class="section-title"><span class="en">Selected Case Studies</span><span class="ru">Избранные кейсы</span></h2>
   </div>
   <div class="project-list reveal">
 
     <!-- 1: History of Kyrgyzstan -->
     <div class="project-item" onclick="toggleDetail('d1',this)">
       <div class="project-name-wrap">
-        <span class="project-name"><span class="en">History of Kyrgyzstan - National Educational Series</span><span class="ru">«История Кыргызстана» - национальный образовательный проект</span></span>
-        <span class="project-sub"><span class="en">27-episode animated series used in schools nationwide</span><span class="ru">27 серий, используются в школах по всей стране</span></span>
+        <span class="project-name"><span class="en">History of Kyrgyzstan — National Educational Program</span><span class="ru">«История Кыргызстана» — национальная образовательная программа</span></span>
+        <span class="project-sub"><span class="en">27-episode delivery used in schools nationwide</span><span class="ru">27 серий, используются в школах по всей стране</span></span>
       </div>
-      <span class="project-role"><span class="en">Researcher, Producer, Scriptwriter</span><span class="ru">Исследователь, Продюсер, Сценарист</span></span>
+      <span class="project-role"><span class="en">Delivery Lead, Producer</span><span class="ru">Руководитель поставки, Продюсер</span></span>
       <span class="project-arrow">&#8599;</span>
     </div>
     <div class="project-detail" id="d1"><div class="project-detail-inner">
       <div class="detail-highlight"><span class="en">National Impact</span><span class="ru">Национальный масштаб</span></div>
-      <p><span class="en"><strong>27-episode animated series</strong> used in schools across Kyrgyzstan for state exam preparation (ORT/NCT). I led <strong>deep research with historians</strong>, transformed academic content into story-first narratives, and designed the visual logic - historical maps, timelines, genealogical trees - making centuries of history accessible. <em>Thousands of students use these videos annually as their primary study resource.</em></span><span class="ru"><strong>27 серий анимационного цикла</strong>, который используется в школах по всей стране для подготовки к гос. экзаменам (ОРТ/НЦТ). Провела <strong>глубокий ресерч с историками</strong>, трансформировала академический контент в нарратив и спроектировала визуальную логику - карты, хронологии, генеалогические древа. <em>Тысячи учеников ежегодно используют сериал как основной ресурс.</em></span></p>
-      <div class="detail-tags"><span class="detail-tag">Edutainment</span><span class="detail-tag">Animation</span><span class="detail-tag neutral">27 Episodes</span></div>
-      <p style="margin-top:1rem"><a href="https://youtube.com/playlist?list=PL7D9VKOajnS0BZzd29HhX1z9wmJ7yKmZM&si=OoUQIwTB3J39F66h" target="_blank" rel="noopener"><span class="en">Watch the series &#8594;</span><span class="ru">Смотреть сериал &#8594;</span></a></p>
+      <p><span class="en"><strong>27-episode educational program</strong> deployed nationwide for state exam preparation (ORT/NCT). Coordinated a cross-functional team of historians, illustrators, animators, voice talent and editors across a multi-month delivery cycle. Designed the multi-tier <strong>expert review and QA workflow</strong>, managed scope and timeline against shifting expert input, and ensured final handover for state curriculum integration. <em>Thousands of students rely on the deliverable annually.</em></span><span class="ru"><strong>27-серийная образовательная программа</strong>, развёрнутая по всей стране для подготовки к гос. экзаменам (ОРТ/НЦТ). Координировала кросс-функциональную команду историков, иллюстраторов, аниматоров, голосовых актёров и монтажёров на многомесячном цикле поставки. Спроектировала <strong>многоуровневый процесс экспертного ревью и QA</strong>, управляла скоупом и таймлайном при изменчивом экспертном вводе, обеспечила финальную сдачу для интеграции в гос. учебный план.</span></p>
+      <div class="detail-tags"><span class="detail-tag">Multi-stakeholder</span><span class="detail-tag">QA Workflow</span><span class="detail-tag neutral">27 Deliverables</span></div>
+      <p style="margin-top:1rem"><a href="https://youtube.com/playlist?list=PL7D9VKOajnS0BZzd29HhX1z9wmJ7yKmZM&si=OoUQIwTB3J39F66h" target="_blank" rel="noopener"><span class="en">View deliverables &#8594;</span><span class="ru">Смотреть результаты &#8594;</span></a></p>
     </div></div>
 
     <!-- 2: Manas -->
     <div class="project-item" onclick="toggleDetail('d2',this)">
       <div class="project-name-wrap">
-        <span class="project-name"><span class="en">Manas - Animated Series</span><span class="ru">Анимационный сериал «Манас»</span></span>
-        <span class="project-sub"><span class="en">Modern adaptation of the national epic for youth</span><span class="ru">Современная адаптация национального эпоса для молодежи</span></span>
+        <span class="project-name"><span class="en">Manas — 10-Episode Animated Program</span><span class="ru">«Манас» — анимационная программа из 10 серий</span></span>
+        <span class="project-sub"><span class="en">Multi-stakeholder delivery with cultural advisors</span><span class="ru">Мультистейкхолдерная поставка с культурными экспертами</span></span>
       </div>
-      <span class="project-role"><span class="en">Researcher, Producer, Scriptwriter</span><span class="ru">Исследователь, Продюсер, Сценарист</span></span>
+      <span class="project-role"><span class="en">Delivery Lead, Producer</span><span class="ru">Руководитель поставки, Продюсер</span></span>
       <span class="project-arrow">&#8599;</span>
     </div>
     <div class="project-detail" id="d2"><div class="project-detail-inner">
       <div class="detail-highlight"><span class="en">Cultural Heritage</span><span class="ru">Культурное наследие</span></div>
-      <p><span class="en">A modern animated adaptation of the Kyrgyz national epic for children and youth. I studied <strong>the epic in multiple variants</strong>, developed all scripts for <strong>10 episodes</strong>, and oversaw creative direction - transforming archaic narrative into dynamic modern storytelling while <em>preserving cultural authenticity</em>.</span><span class="ru">Современная анимационная адаптация национального эпоса. Изучила <strong>эпос в нескольких вариантах</strong>, разработала сценарии всех <strong>10 серий</strong> и руководила креативным направлением - трансформация архаичного повествования в современный формат с <em>сохранением культурной аутентичности</em>.</span></p>
-      <div class="detail-tags"><span class="detail-tag">Edutainment</span><span class="detail-tag">Animation</span><span class="detail-tag">Deep Research</span><span class="detail-tag neutral">10 Episodes</span></div>
-      <p style="margin-top:1rem"><a href="https://youtu.be/BuqbhMco6cU?si=H5fPpgo5B6dxDvIe" target="_blank" rel="noopener"><span class="en">Watch &#8594;</span><span class="ru">Смотреть &#8594;</span></a></p>
+      <p><span class="en"><strong>10-episode delivery</strong> adapting the Kyrgyz national epic for modern audiences. Managed end-to-end production: vendor selection, milestone-gated content review with cultural advisors, illustration and animation pipelines, post-production QA. Defined <strong>review gates and acceptance criteria</strong> across all episodes to maintain consistency at scale.</span><span class="ru"><strong>Поставка из 10 серий</strong> с адаптацией национального эпоса. Управляла полным циклом производства: выбор подрядчиков, milestone-gated ревью контента с культурными экспертами, конвейеры иллюстрации и анимации, post-production QA. Определила <strong>гейты ревью и критерии приёмки</strong> по всем сериям для удержания консистентности.</span></p>
+      <div class="detail-tags"><span class="detail-tag">End-to-end Delivery</span><span class="detail-tag">Vendor Management</span><span class="detail-tag neutral">10 Deliverables</span></div>
+      <p style="margin-top:1rem"><a href="https://youtu.be/BuqbhMco6cU?si=H5fPpgo5B6dxDvIe" target="_blank" rel="noopener"><span class="en">View &#8594;</span><span class="ru">Смотреть &#8594;</span></a></p>
     </div></div>
 
     <!-- 3: KIYAL -->
     <div class="project-item" onclick="toggleDetail('d3',this)">
       <div class="project-name-wrap">
-        <span class="project-name"><span class="en">KIYAL - Archival Documentary on Cultural Heritage</span><span class="ru">KIYAL - документальное повествование о культурном наследии</span></span>
-        <span class="project-sub"><span class="en">One-woman crew / State Award for cultural preservation</span><span class="ru">One-woman crew / Государственная грамота</span></span>
+        <span class="project-name"><span class="en">KIYAL — Solo End-to-End Delivery</span><span class="ru">KIYAL — самостоятельная поставка под ключ</span></span>
+        <span class="project-sub"><span class="en">State Award for cultural preservation</span><span class="ru">Государственная грамота</span></span>
       </div>
-      <span class="project-role"><span class="en">Researcher, Director, Scriptwriter</span><span class="ru">Исследователь, Режиссер, Сценарист</span></span>
+      <span class="project-role"><span class="en">Project Lead</span><span class="ru">Руководитель проекта</span></span>
       <span class="project-arrow">&#8599;</span>
     </div>
     <div class="project-detail" id="d3"><div class="project-detail-inner">
       <div class="detail-highlight"><span class="en">Award-winning</span><span class="ru">Награда</span></div>
-      <p><span class="en">A <strong>one-woman-crew documentary</strong> on the history of "Kiyal" - the birthplace of Kyrgyz craftsmanship. Full cycle: archival research, interviews with master artisans, production and post-production. <em>Awarded a <strong>State Certificate</strong> for contribution to cultural preservation.</em></span><span class="ru"><strong>Документальный фильм в формате one-woman crew</strong> об истории «Кыяла» - колыбели кыргызского ремесленничества. Полный цикл: архивное исследование, интервью с мастерами, продакшн и пост-продакшн. <em>Награждена <strong>государственной грамотой</strong> за вклад в сохранение наследия.</em></span></p>
-      <div class="detail-tags"><span class="detail-tag">Documentary</span><span class="detail-tag">Archival Research</span><span class="detail-tag">State Award</span></div>
-      <p style="margin-top:1rem"><a href="https://www.youtube.com/watch?v=LLIO9lPTSfY&list=PL7D9VKOajnS30r6JlqovtQXn8SAYd29Zh&index=10" target="_blank" rel="noopener"><span class="en">Watch the film &#8594;</span><span class="ru">Смотреть фильм &#8594;</span></a></p>
+      <p><span class="en">Full-lifecycle <strong>solo delivery</strong>: scope, archival research, stakeholder interviews, production, post-production and final handover — with no support team. <em>Awarded a <strong>State Certificate</strong> for contribution to cultural preservation.</em> A practical demonstration of operating across every project function when needed.</span><span class="ru">Полная <strong>самостоятельная поставка</strong>: скоуп, архивный ресерч, интервью со стейкхолдерами, производство, пост-продакшн, финальная сдача — без команды поддержки. <em>Награждена <strong>государственной грамотой</strong> за вклад в сохранение наследия.</em> Практическая демонстрация умения работать на каждой функции проекта.</span></p>
+      <div class="detail-tags"><span class="detail-tag">Full Lifecycle</span><span class="detail-tag">Solo Delivery</span><span class="detail-tag">State Award</span></div>
+      <p style="margin-top:1rem"><a href="https://www.youtube.com/watch?v=LLIO9lPTSfY&list=PL7D9VKOajnS30r6JlqovtQXn8SAYd29Zh&index=10" target="_blank" rel="noopener"><span class="en">View deliverable &#8594;</span><span class="ru">Смотреть &#8594;</span></a></p>
     </div></div>
 
     <!-- 4: One Day They Will Leave -->
     <div class="project-item" onclick="toggleDetail('d4',this)">
       <div class="project-name-wrap">
-        <span class="project-name"><span class="en">"Until They're Gone!" - Animated Mini-Series</span><span class="ru">«Однажды они уйдут!» - анимационный мини-сериал</span></span>
-        <span class="project-sub"><span class="en">EU-funded / Grant-winning project</span><span class="ru">Финансирование ЕС / Грантовый проект</span></span>
+        <span class="project-name"><span class="en">"Until They're Gone!" — EU-Funded Program</span><span class="ru">«Однажды они уйдут!» — программа с финансированием ЕС</span></span>
+        <span class="project-sub"><span class="en">Won competitive grant; led delivery against EU reporting requirements</span><span class="ru">Победитель конкурсного гранта; поставка под требования отчётности ЕС</span></span>
       </div>
-      <span class="project-role"><span class="en">Producer, Scriptwriter</span><span class="ru">Продюсер, Сценарист</span></span>
+      <span class="project-role"><span class="en">Project Manager, Producer</span><span class="ru">Проектный менеджер, Продюсер</span></span>
       <span class="project-arrow">&#8599;</span>
     </div>
     <div class="project-detail" id="d4"><div class="project-detail-inner">
       <div class="detail-highlight"><span class="en">EU Funded</span><span class="ru">Финансирование ЕС</span></div>
-      <p><span class="en">Socio-philosophical animation reimagining the "Mankurt" legend for modern civil society. I <strong>co-authored the concept</strong>, wrote the <strong>winning grant proposal</strong> for ALDA/EU international competition, developed the multi-layered screenplay, and led creative direction throughout production.</span><span class="ru">Социально-философская анимация, переосмысляющая легенду о «Манкурте». <strong>Соавтор концепции</strong>, автор <strong>грантовой заявки</strong>, победившей в международном конкурсе ALDA/ЕС, сценарист проекта.</span></p>
-      <div class="detail-tags"><span class="detail-tag">EU Funded</span><span class="detail-tag">Grant Winning</span><span class="detail-tag neutral">Animation</span></div>
-      <p style="margin-top:1rem"><a href="https://youtu.be/WuybIcDsmRk?si=hmba2QKw2USrF-V1" target="_blank" rel="noopener"><span class="en">Watch &#8594;</span><span class="ru">Смотреть &#8594;</span></a></p>
+      <p><span class="en">Co-authored the <strong>winning grant proposal</strong> for the ALDA/EU international competition, then led delivery — managing budget, milestones, multi-disciplinary team, and <strong>EU reporting and compliance requirements</strong>. Demonstrated ability to deliver against an external donor's audit-grade documentation standards.</span><span class="ru">Соавтор <strong>победившей грантовой заявки</strong> в международном конкурсе ALDA/ЕС, затем — руководитель поставки. Управляла бюджетом, milestone'ами, мультидисциплинарной командой, а также <strong>требованиями отчётности и комплаенса ЕС</strong>. Продемонстрировала способность поставлять под аудит-уровень документации внешнего донора.</span></p>
+      <div class="detail-tags"><span class="detail-tag">EU Funded</span><span class="detail-tag">Grant Won</span><span class="detail-tag">Compliance Reporting</span></div>
+      <p style="margin-top:1rem"><a href="https://youtu.be/WuybIcDsmRk?si=hmba2QKw2USrF-V1" target="_blank" rel="noopener"><span class="en">View &#8594;</span><span class="ru">Смотреть &#8594;</span></a></p>
     </div></div>
 
     <!-- 5: Mini MBA OSCE -->
     <div class="project-item" onclick="toggleDetail('d5',this)">
       <div class="project-name-wrap">
-        <span class="project-name"><span class="en">Mini MBA Web Platform & Course - OSCE</span><span class="ru">WEB-платформа и курс Mini MBA - ОБСЕ</span></span>
-        <span class="project-sub"><span class="en">188 video lectures + dedicated platform</span><span class="ru">188 видеолекций + специализированный сайт</span></span>
+        <span class="project-name"><span class="en">Mini MBA Web Platform &amp; Course — OSCE</span><span class="ru">Mini MBA: WEB-платформа и курс — ОБСЕ</span></span>
+        <span class="project-sub"><span class="en">188 deliverables + custom platform shipped on a fixed OSCE deadline</span><span class="ru">188 единиц контента + платформа в фиксированный дедлайн ОБСЕ</span></span>
       </div>
-      <span class="project-role"><span class="en">Creative Producer, PM</span><span class="ru">Креативный продюсер, PM</span></span>
+      <span class="project-role"><span class="en">Senior PM, Producer</span><span class="ru">Senior PM, Продюсер</span></span>
       <span class="project-arrow">&#8599;</span>
     </div>
     <div class="project-detail" id="d5"><div class="project-detail-inner">
-      <div class="detail-highlight"><span class="en">Large-scale delivery</span><span class="ru">Масштабный проект</span></div>
-      <p><span class="en"><strong>188 video lectures</strong> with 4 subject matter experts, plus a dedicated web platform. Full cycle management - team assembly, expert coordination, methodology, filming, site development. <em>Delivered on deadline for OSCE.</em></span><span class="ru"><strong>188 видеолекций</strong> с 4 экспертами и специализированный сайт. Управление полным циклом - от сбора команды до запуска. <em>Сдано в срок для ОБСЕ.</em></span></p>
-      <div class="detail-tags"><span class="detail-tag neutral">188 Lectures</span><span class="detail-tag">Web Platform</span><span class="detail-tag">OSCE</span></div>
-      <p style="margin-top:1rem"><a href="https://youtu.be/H1gYAAeTRGw?t=47" target="_blank" rel="noopener"><span class="en">Watch &#8594;</span><span class="ru">Смотреть &#8594;</span></a></p>
+      <div class="detail-highlight"><span class="en">Largest single delivery</span><span class="ru">Крупнейшая разовая поставка</span></div>
+      <p><span class="en">The largest single delivery in my portfolio: <strong>188 video lectures across 4 SME workstreams</strong>, plus a dedicated web platform. Built and ran the delivery operation end-to-end — team assembly, SME coordination, methodology and curriculum architecture, production pipeline, web development, integration QA. <em>Shipped on a fixed OSCE deadline with no scope slippage.</em></span><span class="ru">Крупнейшая разовая поставка в портфеле: <strong>188 видеолекций в 4 потоках экспертов</strong> + отдельная веб-платформа. Построила и вела операцию поставки end-to-end — сборка команды, координация SME, методология и архитектура программы, производственный конвейер, веб-разработка, интеграционный QA. <em>Сдано в фиксированный дедлайн ОБСЕ без проседания скоупа.</em></span></p>
+      <div class="detail-tags"><span class="detail-tag neutral">188 Deliverables</span><span class="detail-tag">Web Platform</span><span class="detail-tag">Fixed Deadline</span><span class="detail-tag">OSCE</span></div>
+      <p style="margin-top:1rem"><a href="https://youtu.be/H1gYAAeTRGw?t=47" target="_blank" rel="noopener"><span class="en">View &#8594;</span><span class="ru">Смотреть &#8594;</span></a></p>
     </div></div>
 
     <!-- 6: ESG GIZ -->
     <div class="project-item" onclick="toggleDetail('d6',this)">
       <div class="project-name-wrap">
-        <span class="project-name"><span class="en">ESG & Green Investment Course - GIZ</span><span class="ru">Исследование и адаптация контента по ESG - GIZ</span></span>
-        <span class="project-sub"><span class="en">25 training scripts for banking professionals</span><span class="ru">25 сценариев для банковских специалистов</span></span>
+        <span class="project-name"><span class="en">ESG &amp; Green Investment Curriculum — GIZ</span><span class="ru">Программа ESG и зелёных инвестиций — GIZ</span></span>
+        <span class="project-sub"><span class="en">Requirements analysis from 100+ hours of expert content</span><span class="ru">Анализ требований из 100+ часов экспертного материала</span></span>
       </div>
-      <span class="project-role"><span class="en">Researcher, Scriptwriter</span><span class="ru">Исследователь, Сценарист</span></span>
+      <span class="project-role"><span class="en">Delivery Lead, Analyst</span><span class="ru">Руководитель поставки, Аналитик</span></span>
       <span class="project-arrow">&#8599;</span>
     </div>
     <div class="project-detail" id="d6"><div class="project-detail-inner">
-      <div class="detail-highlight"><span class="en">Research-intensive</span><span class="ru">Глубокий ресерч</span></div>
-      <p><span class="en"><strong>25 training video scripts</strong> on ESG principles for banking professionals. I analyzed <strong>100+ hours of expert seminars</strong>, international climate strategies, and transformed complex financial content into clear, structured educational scripts.</span><span class="ru"><strong>25 сценариев</strong> обучающего видеокурса по ESG-принципам. Проанализировала <strong>более 100 часов семинаров</strong>, международные климатические стратегии и трансформировала сложный контент в структурированные сценарии.</span></p>
-      <div class="detail-tags"><span class="detail-tag neutral">25 Scripts</span><span class="detail-tag">Data Adaptation</span><span class="detail-tag">Methodology</span></div>
+      <div class="detail-highlight"><span class="en">Research-intensive</span><span class="ru">Research-intensive</span></div>
+      <p><span class="en">Delivered <strong>25 structured training modules</strong> for banking professionals on ESG principles. Performed deep <strong>requirements analysis on 100+ hours</strong> of expert seminars and international climate frameworks, designed the curriculum architecture, and produced the structured delivery package for downstream production. A clear demonstration of turning ambiguous, data-heavy input into a defined, structured output.</span><span class="ru">Поставила <strong>25 структурированных тренинг-модулей</strong> по ESG для банковских специалистов. Провела глубокий <strong>анализ требований по 100+ часам</strong> экспертных семинаров и международных климатических фреймворков, спроектировала архитектуру программы, подготовила структурированный пакет поставки для дальнейшего производства.</span></p>
+      <div class="detail-tags"><span class="detail-tag neutral">25 Modules</span><span class="detail-tag">Requirements Analysis</span><span class="detail-tag">Curriculum Architecture</span></div>
     </div></div>
 
     <!-- 7: International Alert -->
     <div class="project-item" onclick="toggleDetail('d7',this)">
       <div class="project-name-wrap">
-        <span class="project-name"><span class="en">Women's Rights Animation - International Alert</span><span class="ru">Анимация по защите прав женщин - International Alert</span></span>
-        <span class="project-sub"><span class="en">Social impact animation on bride kidnapping and domestic violence</span><span class="ru">Социальная анимация о кражe невест и домашнем насилии</span></span>
+        <span class="project-name"><span class="en">Sensitive Social Impact Program — International Alert</span><span class="ru">Программа высокой социальной чувствительности — International Alert</span></span>
+        <span class="project-sub"><span class="en">High-stakes ethical review with client SMEs</span><span class="ru">Высокорисковое этическое ревью с экспертами клиента</span></span>
       </div>
-      <span class="project-role"><span class="en">Director, Scriptwriter, PM</span><span class="ru">Режиссер, Сценарист, PM</span></span>
+      <span class="project-role"><span class="en">Project Manager</span><span class="ru">Проектный менеджер</span></span>
       <span class="project-arrow">&#8599;</span>
     </div>
     <div class="project-detail" id="d7"><div class="project-detail-inner">
-      <div class="detail-highlight"><span class="en">Social Impact</span><span class="ru">Социальный импакт</span></div>
-      <p><span class="en">Social animation addressing <strong>bride kidnapping and domestic violence</strong>. Created ethical storylines from real social challenges, coordinated illustrators and voice actors, managed full production. <em>Received exceptional feedback from International Alert.</em></span><span class="ru">Социальная анимация по темам <strong>кражи невест и домашнего насилия</strong>. Создала этичные сюжеты на основе реальных вызовов, координировала команду. <em>Высокая оценка от International Alert.</em></span></p>
-      <div class="detail-tags"><span class="detail-tag">Social Impact</span><span class="detail-tag neutral">Animation</span><span class="detail-tag">Deep Research</span></div>
+      <div class="detail-highlight"><span class="en">Sensitive content delivery</span><span class="ru">Чувствительная поставка</span></div>
+      <p><span class="en">Managed delivery of social impact content addressing sensitive topics (bride kidnapping, domestic violence). Built a <strong>multi-tier ethical review process</strong> with client subject matter experts, coordinated illustrators and voice talent, and managed risk on highly visible content. <em>Received exceptional feedback from International Alert.</em></span><span class="ru">Управляла поставкой социального контента по чувствительным темам (кража невест, домашнее насилие). Выстроила <strong>многоуровневый процесс этического ревью</strong> с экспертами клиента, координировала иллюстраторов и голосовых актёров, управляла рисками на видимом контенте. <em>Высокая оценка от International Alert.</em></span></p>
+      <div class="detail-tags"><span class="detail-tag">Risk Management</span><span class="detail-tag">SME Coordination</span><span class="detail-tag">Stakeholder Review</span></div>
       <p style="margin-top:1rem"><a href="https://www.instagram.com/p/CPnbSUGHhbb/" target="_blank" rel="noopener"><span class="en">View on Instagram &#8594;</span><span class="ru">Смотреть в Instagram &#8594;</span></a></p>
     </div></div>
 
     <!-- 8: American Councils -->
     <div class="project-item" onclick="toggleDetail('d8',this)">
       <div class="project-name-wrap">
-        <span class="project-name"><span class="en">Educational Courses - American Councils</span><span class="ru">Образовательные видеокурсы - American Councils</span></span>
-        <span class="project-sub"><span class="en">4 consecutive contracts, 50+ videos, no-tender renewal</span><span class="ru">4 контракта подряд, 50+ роликов, продление без тендера</span></span>
+        <span class="project-name"><span class="en">American Councils — 4 Consecutive Engagements</span><span class="ru">American Councils — 4 контракта подряд</span></span>
+        <span class="project-sub"><span class="en">50+ deliverables / sole-source renewal three times</span><span class="ru">50+ поставок / продление без тендера три раза</span></span>
       </div>
-      <span class="project-role"><span class="en">Creative Producer, PM</span><span class="ru">Креативный продюсер, PM</span></span>
+      <span class="project-role"><span class="en">Senior PM, Producer</span><span class="ru">Senior PM, Продюсер</span></span>
       <span class="project-arrow">&#8599;</span>
     </div>
     <div class="project-detail" id="d8"><div class="project-detail-inner">
-      <div class="detail-highlight"><span class="en">Repeat client</span><span class="ru">Повторный контракт</span></div>
-      <p><span class="en"><strong>Four consecutive projects (50+ videos)</strong> for American Councils for International Education. After flawless first delivery, <em>invited to continue without competitive tender</em> - a testament to quality and reliability.</span><span class="ru"><strong>Четыре последовательных проекта (50+ роликов)</strong> для American Councils. После безупречной реализации - <em>приглашение продолжить без тендера</em>.</span></p>
-      <div class="detail-tags"><span class="detail-tag neutral">50+ Videos</span><span class="detail-tag">Repeat Client</span><span class="detail-tag neutral">Edutainment</span></div>
-      <p style="margin-top:1rem"><a href="https://youtu.be/H1gYAAeTRGw" target="_blank" rel="noopener"><span class="en">Watch &#8594;</span><span class="ru">Смотреть &#8594;</span></a></p>
+      <div class="detail-highlight"><span class="en">Strongest reliability signal</span><span class="ru">Сильнейший сигнал надёжности</span></div>
+      <p><span class="en">Strongest signal of operational reliability in my portfolio. After flawless delivery of the first project (zero defects, on schedule), <em>American Councils invited me to continue without competitive tender</em> — three times in a row, totalling <strong>4 consecutive engagements and 50+ deliverables</strong>. Repeat sole-source contracting at this level is the clearest external proof of trusted partner status.</span><span class="ru">Сильнейший сигнал надёжности в портфеле. После безупречной первой поставки (0 дефектов, в срок) <em>American Councils продлевал контракт без тендера</em> — три раза подряд, итого <strong>4 контракта и 50+ поставок</strong>. Sole-source продление на таком уровне — самое ясное внешнее доказательство статуса проверенного партнёра.</span></p>
+      <div class="detail-tags"><span class="detail-tag neutral">50+ Deliverables</span><span class="detail-tag">4× Sole-Source</span><span class="detail-tag">Repeat Client</span></div>
+      <p style="margin-top:1rem"><a href="https://youtu.be/H1gYAAeTRGw" target="_blank" rel="noopener"><span class="en">View &#8594;</span><span class="ru">Смотреть &#8594;</span></a></p>
     </div></div>
 
     <div class="callout-band">
       <div class="callout-inner">
         <blockquote>
-          <span class="en">"Transforming complex research and data into stories that educate, move and inspire action."</span>
-          <span class="ru">"Трансформирую сложные исследования и данные в истории, которые обучают, вдохновляют и побуждают к действию."</span>
+          <span class="en">"Translating ambiguous requirements into structured execution and zero-defect delivery."</span>
+          <span class="ru">«Перевожу размытые требования в структурированное исполнение и поставку без дефектов».</span>
         </blockquote>
-        <div class="callout-caption"><span class="en">Approach</span><span class="ru">Подход</span></div>
+        <div class="callout-caption"><span class="en">How I work</span><span class="ru">Как я работаю</span></div>
       </div>
     </div>
 
     <!-- 9: OSCE Rocket Fuel -->
     <div class="project-item" onclick="toggleDetail('d9',this)">
       <div class="project-name-wrap">
-        <span class="project-name"><span class="en">Rocket Fuel Disposal Reports - OSCE</span><span class="ru">Утилизация ракетного топлива - ОБСЕ</span></span>
-        <span class="project-sub"><span class="en">Repeat contract for technically complex documentation</span><span class="ru">Повторный контракт, технически сложная документация</span></span>
+        <span class="project-name"><span class="en">Rocket Fuel Disposal Documentation — OSCE</span><span class="ru">Документирование утилизации ракетного топлива — ОБСЕ</span></span>
+        <span class="project-sub"><span class="en">Selected for Phase 2 after successful Phase 1 delivery</span><span class="ru">Выбраны для Фазы 2 после успешной Фазы 1</span></span>
       </div>
-      <span class="project-role"><span class="en">Project Manager, Scriptwriter</span><span class="ru">Проектный менеджер, Сценарист</span></span>
+      <span class="project-role"><span class="en">Project Manager</span><span class="ru">Проектный менеджер</span></span>
       <span class="project-arrow">&#8599;</span>
     </div>
     <div class="project-detail" id="d9"><div class="project-detail-inner">
-      <p><span class="en">Video documentation of the technically complex <strong>melange neutralization process</strong>. After successful first phase, <em>selected for second phase</em> - confirming trusted partner status with OSCE.</span><span class="ru">Видеофиксация технически сложного процесса <strong>нейтрализации меланжа</strong>. После успешной первой фазы - <em>выбраны для второй</em>, подтверждение статуса проверенного партнера ОБСЕ.</span></p>
-      <div class="detail-tags"><span class="detail-tag">OSCE</span><span class="detail-tag">Repeat Contract</span><span class="detail-tag neutral">Data Adaptation</span></div>
+      <p><span class="en">Managed documentation delivery for the technically complex <strong>melange neutralization process</strong> — coordination with technical experts, on-site capture, and final reporting. After Phase 1 delivery, <em>OSCE selected the team for Phase 2</em> — a direct vote of confidence in execution quality.</span><span class="ru">Управляла поставкой документации технически сложного <strong>процесса нейтрализации меланжа</strong> — координация с техническими экспертами, on-site фиксация, финальная отчётность. После Фазы 1 <em>ОБСЕ выбрала команду для Фазы 2</em> — прямой вотум доверия к качеству исполнения.</span></p>
+      <div class="detail-tags"><span class="detail-tag">OSCE</span><span class="detail-tag">Technical Documentation</span><span class="detail-tag">Phase 2 Renewal</span></div>
     </div></div>
 
     <!-- 10: PIL Research -->
     <div class="project-item" onclick="toggleDetail('d10',this)">
       <div class="project-name-wrap">
-        <span class="project-name"><span class="en">Women's Migration Animation - PIL Research</span><span class="ru">«Женская миграция» - PIL Research</span></span>
-        <span class="project-sub"><span class="en">Data-to-narrative transformation</span><span class="ru">Трансформация данных в нарратив</span></span>
+        <span class="project-name"><span class="en">Migration Research Communications — PIL Research</span><span class="ru">Коммуникации миграционного исследования — PIL Research</span></span>
+        <span class="project-sub"><span class="en">Translating research findings into stakeholder-facing assets</span><span class="ru">Превращение исследовательских данных в материалы для стейкхолдеров</span></span>
       </div>
-      <span class="project-role"><span class="en">Director, Scriptwriter, PM</span><span class="ru">Режиссер, Сценарист, PM</span></span>
+      <span class="project-role"><span class="en">Project Manager</span><span class="ru">Проектный менеджер</span></span>
       <span class="project-arrow">&#8599;</span>
     </div>
     <div class="project-detail" id="d10"><div class="project-detail-inner">
-      <p><span class="en">Two social animation videos <strong>transforming research data</strong> on women's migration into engaging narrative - <em>humanizing statistics</em> through characters and storylines.</span><span class="ru">Два анимационных ролика - <strong>трансформация данных исследований</strong> о женской миграции в вовлекающий нарратив, <em>«очеловечивание» статистики</em> через персонажей и сюжеты.</span></p>
-      <div class="detail-tags"><span class="detail-tag neutral">Animation</span><span class="detail-tag">Data Visualization</span></div>
-      <p style="margin-top:1rem"><a href="https://youtu.be/krtU07Z-ZkU" target="_blank" rel="noopener"><span class="en">Watch &#8594;</span><span class="ru">Смотреть &#8594;</span></a></p>
+      <p><span class="en">Two stakeholder-facing deliverables built from underlying research data on women's migration. <strong>Bridged the research team and creative producers</strong>, validating data accuracy through every iteration to maintain research integrity in the final output.</span><span class="ru">Две поставки для стейкхолдеров на основе исследовательских данных по женской миграции. <strong>Связала команду исследователей и креативных продюсеров</strong>, валидируя точность данных на каждой итерации для сохранения исследовательской целостности.</span></p>
+      <div class="detail-tags"><span class="detail-tag">Data Translation</span><span class="detail-tag neutral">Stakeholder Communications</span></div>
+      <p style="margin-top:1rem"><a href="https://youtu.be/krtU07Z-ZkU" target="_blank" rel="noopener"><span class="en">View &#8594;</span><span class="ru">Смотреть &#8594;</span></a></p>
     </div></div>
 
     <!-- 11: CABAR.asia -->
     <div class="project-item" onclick="toggleDetail('d11',this)">
       <div class="project-name-wrap">
-        <span class="project-name"><span class="en">Media School Video Library - CABAR.asia / IWPR</span><span class="ru">Видеобаза для медиашколы CABAR.asia - IWPR</span></span>
-        <span class="project-sub"><span class="en">20 animated lessons on analytics and fact-checking</span><span class="ru">20 анимационных уроков по аналитике и фактчекингу</span></span>
+        <span class="project-name"><span class="en">Regional Education Library — CABAR.asia / IWPR</span><span class="ru">Региональная учебная библиотека — CABAR.asia / IWPR</span></span>
+        <span class="project-sub"><span class="en">Foundation library for IWPR's Central Asia distance education</span><span class="ru">Базовая библиотека для дистанционного обучения IWPR в ЦА</span></span>
       </div>
-      <span class="project-role"><span class="en">Project Manager, Scriptwriter</span><span class="ru">Проектный менеджер, Сценарист</span></span>
+      <span class="project-role"><span class="en">Project Manager</span><span class="ru">Проектный менеджер</span></span>
       <span class="project-arrow">&#8599;</span>
     </div>
     <div class="project-detail" id="d11"><div class="project-detail-inner">
-      <p><span class="en"><strong>20 animated video lessons</strong> for CABAR.asia media school covering analytics, fact-checking and data journalism. <em>Became the foundation for IWPR's remote education across Central Asia.</em></span><span class="ru"><strong>20 анимационных видеоуроков</strong> по аналитике, фактчекингу и дата-журналистике. <em>Стали базой дистанционного обучения IWPR в Центральной Азии.</em></span></p>
-      <div class="detail-tags"><span class="detail-tag neutral">20 Lessons</span><span class="detail-tag neutral">Edutainment</span><span class="detail-tag">IWPR</span></div>
+      <p><span class="en"><strong>20 modular lessons</strong> on analytics, fact-checking and data journalism. Designed and delivered the structured library that <em>became the foundation for IWPR's distance education infrastructure across Central Asia</em> — a deliverable that outlived the project and went on to power a regional program.</span><span class="ru"><strong>20 модульных уроков</strong> по аналитике, фактчекингу и дата-журналистике. Спроектировала и поставила структурированную библиотеку, которая <em>стала базой инфраструктуры дистанционного обучения IWPR в Центральной Азии</em> — поставка пережила проект и стала основой региональной программы.</span></p>
+      <div class="detail-tags"><span class="detail-tag neutral">20 Modules</span><span class="detail-tag">Regional Deployment</span><span class="detail-tag">IWPR</span></div>
     </div></div>
 
     <!-- 12: USAID -->
     <div class="project-item" onclick="toggleDetail('d12',this)">
       <div class="project-name-wrap">
-        <span class="project-name"><span class="en">Reading Methodology Course - USAID / Chemonics</span><span class="ru">Видеоуроки по внеклассному чтению - USAID</span></span>
-        <span class="project-sub"><span class="en">Expert lectures + live classroom footage</span><span class="ru">Экспертные лекции + реальные съемки из классов</span></span>
+        <span class="project-name"><span class="en">Reading Methodology Program — USAID / Chemonics</span><span class="ru">Программа методики чтения — USAID / Chemonics</span></span>
+        <span class="project-sub"><span class="en">Multi-location coordination across teachers, classrooms, SMEs</span><span class="ru">Координация в нескольких локациях: учителя, классы, эксперты</span></span>
       </div>
-      <span class="project-role"><span class="en">Project Manager, Scriptwriter</span><span class="ru">Проектный менеджер, Сценарист</span></span>
+      <span class="project-role"><span class="en">Project Manager</span><span class="ru">Проектный менеджер</span></span>
       <span class="project-arrow">&#8599;</span>
     </div>
     <div class="project-detail" id="d12"><div class="project-detail-inner">
-      <p><span class="en"><strong>Six comprehensive video lessons</strong> for teachers combining expert lectures with live classroom footage. Adapted complex pedagogical methods into accessible video format for Chemonics International.</span><span class="ru"><strong>Шесть видеоуроков</strong> для педагогов, сочетающих экспертные лекции с реальными съемками из классов. Адаптация педагогических методик для Chemonics International.</span></p>
-      <div class="detail-tags"><span class="detail-tag">USAID</span><span class="detail-tag neutral">Edutainment</span><span class="detail-tag neutral">Teacher Training</span></div>
-      <p style="margin-top:1rem"><a href="https://youtu.be/ZCng1ZCh3eM" target="_blank" rel="noopener"><span class="en">Watch &#8594;</span><span class="ru">Смотреть &#8594;</span></a></p>
+      <p><span class="en"><strong>6 video modules</strong> for teachers combining expert lectures with live classroom footage for Chemonics International. Coordinated <strong>multi-location capture</strong> across teachers, classrooms and pedagogical SMEs, then drove the editorial pipeline to delivery.</span><span class="ru"><strong>6 видеомодулей</strong> для педагогов, сочетающих экспертные лекции и съёмки из реальных классов для Chemonics International. Координировала <strong>мульти-локационную съёмку</strong> с учителями, классами и педагогическими экспертами, затем вела редакционный конвейер до сдачи.</span></p>
+      <div class="detail-tags"><span class="detail-tag">USAID</span><span class="detail-tag">Multi-location</span><span class="detail-tag neutral">SME Coordination</span></div>
+      <p style="margin-top:1rem"><a href="https://youtu.be/ZCng1ZCh3eM" target="_blank" rel="noopener"><span class="en">View &#8594;</span><span class="ru">Смотреть &#8594;</span></a></p>
     </div></div>
 
     <!-- 13: Museum -->
     <div class="project-item" onclick="toggleDetail('d13',this)">
       <div class="project-name-wrap">
-        <span class="project-name"><span class="en">Museum Digitization - KNMII</span><span class="ru">Оцифровка выставок - КНМИИ им. Гапара Айтиева</span></span>
-        <span class="project-sub"><span class="en">Physical art to digital format</span><span class="ru">Переход физического искусства в цифровой формат</span></span>
+        <span class="project-name"><span class="en">Museum Digitization Documentation — KNMII</span><span class="ru">Документирование оцифровки музейных коллекций — КНМИИ</span></span>
+        <span class="project-sub"><span class="en">Physical-to-digital transition program documentation</span><span class="ru">Документирование перехода физического в цифровое</span></span>
       </div>
-      <span class="project-role"><span class="en">Director, Producer</span><span class="ru">Режиссер, Продюсер</span></span>
+      <span class="project-role"><span class="en">Project Lead</span><span class="ru">Руководитель проекта</span></span>
       <span class="project-arrow">&#8599;</span>
     </div>
     <div class="project-detail" id="d13"><div class="project-detail-inner">
-      <p><span class="en">Professional video report documenting the <strong>digitization of museum exhibitions</strong> - demonstrating the transition of physical art into digital format through modern technology.</span><span class="ru">Видеоотчет о процессе <strong>оцифровки музейных выставок</strong> - переход физического искусства в цифровой формат.</span></p>
-      <div class="detail-tags"><span class="detail-tag">Cultural Heritage</span><span class="detail-tag neutral">Full Cycle</span></div>
-      <p style="margin-top:1rem"><a href="https://youtu.be/buZsnkRPNAw" target="_blank" rel="noopener"><span class="en">Watch &#8594;</span><span class="ru">Смотреть &#8594;</span></a></p>
+      <p><span class="en">Documented and reported on a <strong>museum digitization initiative</strong> — the transition of physical collections into digital format. Coordinated capture across the institution and produced a delivery package suitable for institutional reporting.</span><span class="ru">Документировала и отчитывалась по <strong>инициативе оцифровки музейных коллекций</strong> — переходу физических коллекций в цифру. Координировала съёмку по учреждению и подготовила пакет поставки для институциональной отчётности.</span></p>
+      <div class="detail-tags"><span class="detail-tag">Cultural Heritage</span><span class="detail-tag neutral">Institutional Reporting</span></div>
+      <p style="margin-top:1rem"><a href="https://youtu.be/buZsnkRPNAw" target="_blank" rel="noopener"><span class="en">View &#8594;</span><span class="ru">Смотреть &#8594;</span></a></p>
     </div></div>
 
     <!-- 14: Otunbaeva -->
     <div class="project-item" onclick="toggleDetail('d14',this)">
       <div class="project-name-wrap">
-        <span class="project-name"><span class="en">Women in Migration & Peacebuilding - Otunbaeva Foundation</span><span class="ru">Роль женщин в миграции - Фонд Отунбаевой</span></span>
-        <span class="project-sub"><span class="en">Advocacy video / End-to-end production</span><span class="ru">Адвокационный видеопроект / Полный цикл</span></span>
+        <span class="project-name"><span class="en">Migration &amp; Peacebuilding Advocacy — Otunbaeva Foundation</span><span class="ru">Адвокация по миграции и миростроительству — Фонд Отунбаевой</span></span>
+        <span class="project-sub"><span class="en">End-to-end advocacy delivery</span><span class="ru">Адвокационная поставка полного цикла</span></span>
       </div>
-      <span class="project-role"><span class="en">Director, Project Manager</span><span class="ru">Режиссер, Проектный менеджер</span></span>
+      <span class="project-role"><span class="en">Project Manager</span><span class="ru">Проектный менеджер</span></span>
       <span class="project-arrow">&#8599;</span>
     </div>
     <div class="project-detail" id="d14"><div class="project-detail-inner">
-      <p><span class="en">An advocacy video project highlighting the <strong>invisible contributions of migrant women</strong> to social stability in Kyrgyzstan. End-to-end production from concept to post-production.</span><span class="ru">Адвокационный видеопроект о <strong>вкладе женщин-мигрантов</strong> в социальную стабильность Кыргызстана. Полный цикл от концепции до пост-продакшна.</span></p>
-      <div class="detail-tags"><span class="detail-tag">Advocacy</span><span class="detail-tag">Human Rights</span></div>
+      <p><span class="en">End-to-end project lifecycle for an advocacy deliverable on migrant women's contributions to social stability — concept through post-production, working closely with foundation stakeholders on messaging and approval gates.</span><span class="ru">Полный жизненный цикл адвокационной поставки о вкладе женщин-мигрантов в социальную стабильность — от концепции до пост-продакшна, в тесной работе со стейкхолдерами фонда по мессаджингу и гейтам приёмки.</span></p>
+      <div class="detail-tags"><span class="detail-tag">Advocacy</span><span class="detail-tag">Stakeholder Approval Gates</span></div>
     </div></div>
 
   </div>
@@ -653,7 +709,7 @@ footer {
 <section class="section" id="clients">
   <div class="section-header reveal">
     <span class="section-number">03</span>
-    <h2 class="section-title"><span class="en">Clients & Partners</span><span class="ru">Клиенты и партнеры</span></h2>
+    <h2 class="section-title"><span class="en">Clients &amp; Partners</span><span class="ru">Клиенты и партнёры</span></h2>
   </div>
   <div class="clients-grid reveal">
     <div class="client-item">OSCE</div>
@@ -675,8 +731,8 @@ footer {
 <div class="contact-band">
 <section class="contact-section" id="contact">
   <div class="reveal">
-    <h2><span class="en">Get in Touch</span><span class="ru">Связаться</span></h2>
-    <p><span class="en">Open to collaborations in creative production, research and scriptwriting.</span><span class="ru">Открыта к сотрудничеству в сфере креативного продакшна, исследований и сценарного мастерства.</span></p>
+    <h2><span class="en">Let's talk delivery</span><span class="ru">Поговорим о поставке</span></h2>
+    <p><span class="en">Open to senior project management and delivery operations roles. Available for full-time, contract or consulting engagements with international organizations and enterprise clients.</span><span class="ru">Открыта к ролям senior project management и delivery operations. Доступна для full-time, контрактных и консалтинговых проектов с международными и корпоративными клиентами.</span></p>
     <div class="contact-links">
       <a href="mailto:aykotaalaibek@gmail.com" class="contact-link">Email</a>
       <a href="https://www.linkedin.com/in/aiko-taalaibek-321444306/?locale=en_US" class="contact-link" target="_blank" rel="noopener">LinkedIn</a>
